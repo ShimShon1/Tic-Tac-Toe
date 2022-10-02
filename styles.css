@@ -1,29 +1,133 @@
+
+@font-face {
+    font-family: future;
+    src: url(future1.otf);
+}
+*{
+    box-sizing: border-box;
+    font-family: future;
+
+}
 html,body{
-    height: 100%;
+    
+    color: white;
+    height: 100vh;
     width: 100%;
     padding: 0;
     margin: 0;
+
+    background-image: linear-gradient(grey,rgb(15, 122, 158));
+
+}
+
+h2{
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+h1{
+    margin: 0;
+    font-size: 3.5rem;
+}
+main{
+    border: 10px solid rgba(165, 165, 179, 0.164);
+    padding-top: 5rem;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    gap: 10%;
+    padding-bottom: 0;
+
 }
 
 .game-board{
     width: 30%;
+    height: 55%;
     margin: auto;
     margin-top: 15%;
-
+    margin: 0;
     display: grid;
-    grid-template-columns:repeat(3, 150px);
-    grid-auto-rows: 150px;
+    grid-template-columns:repeat(3, 1fr);
+    grid-auto-rows:1fr;
+
+    margin-top: -3%;
+    background-image: linear-gradient(220deg, rgb(40, 40, 122),grey);
+
+    box-shadow: 5px 5px 5px rgb(194, 189, 164);
+
+
 }
 
+@keyframes opacity-up {
+    from {opacity: 0%;}
+    to {opacity: 100%;}
+  }
+
+.game-cell:hover{
+    background-image:linear-gradient(220deg, rgb(63, 63, 131)60%,grey);
+}
 .game-cell{
-    border: 2px solid black;
+    
+    cursor: pointer;
+    border: 2px solid rgb(180, 180, 180);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
-}
-
-.game-cell:nth-child(3){
-    background-color: grey;
+    font-size: 5rem;
 
 }
+
+
+.game-board, h1, h2,button{
+    animation-name: opacity-up;
+    animation-duration: 2s;
+}
+
+
+.output{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+
+button{
+    padding: 1rem;
+    width: 13rem;
+    background:none;
+    border:double 5px white;
+    color: white;
+    font-size: 1.5rem;
+    justify-self: end;
+}
+
+button:hover{
+    background-color: rgba(255,255,255,0.2);
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 600px) {
+    body,html{
+        font-size: 8px;
+    }
+
+    .game-board{
+        width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    body,html{
+        font-size: 10px;
+    }
+
+    .game-board{
+        width: 50%;
+    }
+  }
