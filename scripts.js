@@ -4,6 +4,7 @@ let player2 = createPlayer("O", [] )
 let gameboard = ['','','','','','','','','']
 let allCells = document.querySelectorAll(".game-cell")
 let gameboardDisplay = document.querySelector(".game-board")
+
 allCells = Array.from(allCells)
 
 let plays = -1;
@@ -51,7 +52,8 @@ function checkWinner(){
         wonText.textContent = "Its a draw!"
         gameboardDisplay.style.pointerEvents = 'none'
 
-        gameboardDisplay.style.BackgroundImage = 'linear-gradient(220deg, green,grey)'
+        gameboardDisplay.style.backgroundImage = 'linear-gradient(220deg, rgba(121, 121, 121,0.5),rgba(196, 186, 186,0.5))';
+
         
     }
 }
